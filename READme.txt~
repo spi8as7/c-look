@@ -1,0 +1,25 @@
+δομή struct elevator_type : δείτε την παράγραφο 4.1 του αρχείου Documentation/block/biodoc.txt.
+
+Μελετήστε τη δομή elevator_ops στο αρχείο include/linux/elevator.h
+Θα χρειαστεί, κατ' ελάχιστον, να υλοποιήσετε τις:
+• elevator_init_fn()
+• elevator_add_req_fn()
+• elevator_dispatch_fn()
+• elevator_exit_fn()
+• elevator_queue_empty_fn()
+• Πιθανότατα και άλλες, όπως την elevator_former_req_fn() και elevator_latter_req_fn()\
+Υπενθυμίζεται ότι για περισσότερες πληροφορίες σε ότι αφορά τη δομή και τις συναρτήσεις,
+μπορείτε να δείτε την παράγραφο 4.1 του αρχείου Documentation/block/biodoc.txt.
+
+• Κάθε φορά που επανεκκινείτε το σύστημα, θα πρέπει να προσαρτάτε τον εικονικό δίσκο κάτω
+από τον κατάλογο /media/test_disk.
+sudo mount /dev/sdb1 /media/test_disk
+Από αυτό το σημείο και πέρα, είναι δυνατόν να γράψετε στον ή να διαβάσετε από τον εικονικό δίσκο
+γράφοντας ή διαβάζοντας κάτω από τον κατάλογο /media/test_disk.
+
+Μετά από κάθε επανεκκίνηση και προκειμένου το module σας να είναι έτοιμο προς χρήση, θα
+πρέπει να το φορτώσετε. Αυτό γίνεται με την εντολή:
+sudo modprobe clook-iosched
+Όταν θελήσετε να απενεργοποιήσετε το module και να το απομακρύνετε από τη μνήμη, εκτελέστε
+την εντολή:
+sudo modprobe -r clook-iosched
